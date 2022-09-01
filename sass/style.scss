@@ -1,0 +1,245 @@
+@import './variables';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	@include center;
+	flex-direction: column;
+	position: relative;
+	min-height: 100vh;
+	font-size: 1.5rem;
+	font-family: 'League Spartan', sans-serif;
+	background-color: $White;
+}
+
+.wrapper {
+	max-width: 330px;
+}
+
+//background images
+.bg {
+	position: absolute;
+	z-index: -1;
+}
+.bg-mobile {
+	width: 100%;
+}
+
+.bg-desktop {
+	display: none;
+}
+
+.bg-top {
+	top: 0;
+}
+
+.bg-bottom {
+	bottom: 0;
+}
+
+// section
+
+.socialproof {
+	&__header {
+		padding: 5.33em 0 3em;
+		color: $veryDarkMagenta;
+		text-align: center;
+
+		&--header {
+			font-size: 4rem;
+			font-weight: bold;
+			line-height: 100%;
+		}
+
+		&--p {
+			margin-top: 1.67em;
+			font-size: 1.8rem;
+			line-height: 135%;
+		}
+	}
+
+	&__rating {
+		&box {
+			@include center;
+			align-items: center;
+			flex-direction: column;
+			margin-bottom: 1em;
+			padding: 1em;
+			background-color: $lightGrayishMagenta;
+			border-radius: 1em;
+
+			&--starbox {
+				margin-bottom: 1em;
+			}
+
+			&--p {
+				color: $veryDarkMagenta;
+				font-size: 1.6rem;
+				font-weight: bold;
+			}
+		}
+	}
+
+	&__reviews {
+		margin: 3.33em 0;
+
+		&box {
+			margin-bottom: 1em;
+			padding: 2em;
+			color: $White;
+			background-color: $veryDarkMagenta;
+			border-radius: 1em;
+
+			&--person {
+				@include center;
+				flex-direction: row;
+				justify-content: start;
+				margin-bottom: 2em;
+
+				img {
+					height: 45px;
+					border-radius: 50%;
+				}
+
+				&-name {
+					margin-left: 2em;
+					line-height: 120%;
+
+					p {
+						color: $softPink;
+					}
+				}
+			}
+
+			&--review {
+				font-size: 1.7rem;
+				font-weight: normal;
+				line-height: 135%;
+			}
+		}
+	}
+}
+
+//media
+
+@media (min-width: 776px) {
+	//background images
+	.bg-mobile {
+		display: none;
+	}
+
+	.bg-desktop {
+		display: block;
+	}
+
+	.bg-top {
+		width: 10%;
+	}
+
+	.bg-bottom {
+		width: 20%;
+	}
+
+	.wrapper {
+		max-width: 1010px;
+	}
+
+	// section
+
+	.socialproof {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 7em auto;
+
+		&__header {
+			flex-basis: 50%;
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding: 0 9em 0 0;
+			text-align: left;
+
+			&--header {
+				font-size: 5rem;
+			}
+
+			&--p {
+				font-size: 1.6rem;
+			}
+		}
+		&__rating {
+			display: flex;
+			justify-content: center;
+			flex-basis: 50%;
+			flex-direction: column;
+		
+
+			&box {
+				flex-direction: row;
+				width: 400px;
+				padding: 1em 2em;
+
+				&--starbox {
+					margin: 0 2em 0 0;
+				}
+				&:nth-child(2) {
+					align-self: center;
+				}
+				&:last-child {
+					align-self: flex-end;
+				}
+			}
+		}
+		&__reviews {
+			display: flex;
+			flex-direction: row;
+			flex-basis: 100%;
+			height: 240px;
+			margin: 5em 0;
+
+			&box {
+				margin-right: 2em;
+				height: 210px;
+
+				&:nth-child(2) {
+					align-self: center;
+					margin-bottom: 0;
+				}
+
+				&:last-child {
+					align-self: flex-end;
+					margin: 0;
+				}
+
+				&--review {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
+
+// atribution
+h1 {
+	display: none;
+}
+
+.attribution {
+	margin-top: 5em;
+	margin-bottom: 0.5em;
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
