@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [github](https://github.com/abuk111/Interactive-rating-component)
-- Live Site URL: [click](https://abuk111.github.io/Interactive-rating-component/)
+- Solution URL: [github](https://github.com/abuk111/Socialproof-section)
+- Live Site URL: [click](https://abuk111.github.io/Socialproof-section/)
 
 ## My process
 
